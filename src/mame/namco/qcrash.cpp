@@ -16,6 +16,8 @@ Cool Gunman is thought to run on similar hardware, it probably belongs here
 #include "sound/okim9810.h"
 #include "speaker.h"
 
+#include "qcrash.lh"
+
 namespace {
 
 class qcrash_state : public driver_device
@@ -89,7 +91,7 @@ ROM_END
 
 } // anonymous namespace
 
-//   YEAR  NAME       PARENT MACHINE   INPUT     CLASS            INIT        ROT   COMPANY         FULLNAME                      FLAGS
-GAME(1999, qcrash,    0,     qcrash,   qcrash,   qcrash_state,    empty_init, ROT0, "Namco", "Quick & Crash (English, QC1 V2.200)", MACHINE_IS_SKELETON_MECHANICAL)
-GAME(1999, qcrash3a,   qcrash,     qcrash,   qcrash,   qcrash_state,    empty_init, ROT0, "Namco", "Quick & Crash (English, QC3 unknown 1)", MACHINE_IS_SKELETON_MECHANICAL)
+//    YEAR  NAME       PARENT MACHINE   INPUT     CLASS            INIT        ROT   COMPANY         FULLNAME                      FLAGS
+GAMEL(1999, qcrash,    0,     qcrash,   qcrash,   qcrash_state,    empty_init, ROT0, "Namco", "Quick & Crash (English, QC1 V2.200)", MACHINE_IS_SKELETON_MECHANICAL, layout_qcrash)
+GAMEL(1999, qcrash3a,   qcrash,     qcrash,   qcrash,   qcrash_state,    empty_init, ROT0, "Namco", "Quick & Crash (English, QC3 unknown 1)", MACHINE_IS_SKELETON_MECHANICAL, layout_qcrash)
 
