@@ -1,3 +1,5 @@
+// license:BSD-3-Clause
+// copyright-holders:man-of-eel
 /*
 
 Quick & Crash - Electromechanical light-gun game
@@ -75,18 +77,22 @@ void qcrash_state::qcrash(machine_config &config)
 	oki.add_route(1, "target_speaker", 1.00);
 }
 
-ROM_START(qcrash)
+ROM_START(qcrash) // source: dragonminded
 	ROM_REGION(0x10000, "maincpu",0)
-	ROM_LOAD("qc1_mproc.ic3",0x0000,0x10000,CRC(8e3f605d) SHA1(69a0da6286e250b92e47b66c9423bc5c793b350b))
+	ROM_LOAD("qc1-mproc.ic3",0x0000,0x10000, CRC(8e3f605d) SHA1(69a0da6286e250b92e47b66c9423bc5c793b350b))
 
-	// Sound roms go here
+	ROM_REGION(0x800000, "oki", 0)
+	ROM_LOAD("qc1-sound00.ic12", 0x000000, 0x400000, CRC(d72713d2) SHA1(556a0be2bb08fc9b4a2476b0ce8a23aa66858809))
+	ROM_LOAD("qc1-sound01.ic13", 0x400000, 0x400000, CRC(70e472a1) SHA1(df06270cede1d00e2ec231276e5e5466ab549794))
 ROM_END
 
-ROM_START(qcrash3a)
+ROM_START(qcrash3a) // source: https://forums.arcade-museum.com/threads/namco-quick-crash-any-other-owners.269913/page-3#post-2940122
 	ROM_REGION(0x10000, "maincpu",0)
-	ROM_LOAD("qc3_mpro.ic3",0x0000,0x10000,CRC(42c54dec) SHA1(0f6ca4bec7ae4f60b1943dad756933d02cd660c4))
+	ROM_LOAD("qc3_mpro.bin",0x0000,0x10000, CRC(42c54dec) SHA1(0f6ca4bec7ae4f60b1943dad756933d02cd660c4))
 
-	// same here
+    ROM_REGION(0x800000, "oki", 0)
+    ROM_LOAD("qc1-sound00.ic12", 0x000000, 0x400000, CRC(d72713d2) SHA1(556a0be2bb08fc9b4a2476b0ce8a23aa66858809))
+    ROM_LOAD("qc1-sound01.ic13", 0x400000, 0x400000, CRC(70e472a1) SHA1(df06270cede1d00e2ec231276e5e5466ab549794))
 ROM_END
 
 } // anonymous namespace
